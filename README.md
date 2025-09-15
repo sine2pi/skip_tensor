@@ -1,5 +1,9 @@
 ``` python
 
+import torch
+import torch.nn as nn
+import math
+
 class Skiptensor(nn.Module):
     def __init__(self, dims, head, skip_pattern=1):
         super().__init__()
@@ -49,7 +53,7 @@ class Transformer(nn.Module):
         x = x + self.ffn(self.norm2(x))
         return x
 
-class RhythmicAudioModel(nn.Module):
+class AudioModel(nn.Module):
     def __init__(self, dims, head, layer=4):
         super().__init__()
 
@@ -66,6 +70,4 @@ class RhythmicAudioModel(nn.Module):
             x = layer(x, layer_index=i)
 
         return x
-
-
 ```        
