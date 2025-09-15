@@ -24,7 +24,7 @@ class Skiptensor(nn.Module):
         v = self.value(x).view(batch_size, seq_len, self.head, self.dims // self.head).transpose(1, 2)
         
         if skip_pattern is None:
-            self.skip_pattern = max(1, 6 - layer_index)
+            self.skip_pattern = max(1, 4 - layer_index) # some pattern
         else:
             self.skip_pattern = skip_pattern
 
