@@ -1,5 +1,3 @@
-``` python
-
 import torch
 import torch.nn as nn
 import math
@@ -73,7 +71,6 @@ class AudioModel(nn.Module):
 
 ####
 
-
 class LearnedSkip(nn.Module):
     def __init__(self, dims, head, max_skip=8):
         super().__init__()
@@ -124,6 +121,3 @@ class LearnedSkip(nn.Module):
                 mask[i, :, j] = True
         return mask.unsqueeze(1)
 
-
-
-```        
